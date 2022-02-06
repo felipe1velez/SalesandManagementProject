@@ -2,6 +2,7 @@ package com.felipevelez.salesmanagementproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.felipevelez.salesmanagementproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,5 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(mainBinding.root)
 
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Toast.makeText(this,"Nos Vemos Pronto", Toast.LENGTH_SHORT).show()
     }
 }
