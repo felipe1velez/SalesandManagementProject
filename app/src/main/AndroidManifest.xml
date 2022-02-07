@@ -13,7 +13,8 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:label="SplashActivity">
+            android:label="SplashActivity"
+            android:theme="@style/Theme.SalesManagementProject.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
