@@ -9,7 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBinding: ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -19,6 +18,6 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-        Toast.makeText(this,"Nos Vemos Pronto", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Nos vemos Pronto", Toast.LENGTH_SHORT).show()
     }
 }
