@@ -19,9 +19,16 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="AppTheme.LoginActivity">
+    <style name="TextViewNormal">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
     </style>
-
+    
+    <style name="TextViewTittle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="TextLink">
         <item name="android:textColor">@color/blue</item>

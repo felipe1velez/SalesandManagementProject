@@ -18,14 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         val credentials = intent.extras
-        var emailReceived: String? = ""
+        val emailReceived: String?
 
         if (credentials != null) {
             emailReceived = credentials.getString("email")
+            mainBinding.registerEmailTextView.text = getString(R.string.register_mail_text, emailReceived)
         }
-
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_overflow, menu)
