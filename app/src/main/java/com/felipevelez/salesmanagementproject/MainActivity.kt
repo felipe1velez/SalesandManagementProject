@@ -19,11 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        Toast.makeText(this, "Nos vemos Pronto", Toast.LENGTH_SHORT).show()
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_overflow, menu)
         return true
@@ -38,9 +33,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
+    }
 
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Toast.makeText(this,"Ten un felíz día",Toast.LENGTH_SHORT).show()
     }
 }
+
 
