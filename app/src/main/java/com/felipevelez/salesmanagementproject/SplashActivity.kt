@@ -20,12 +20,12 @@ class SplashActivity : AppCompatActivity() {
         val timer = Timer()
         timer.schedule(
             timerTask {
-                goToMainActivity()
-            }, 3000
+                goToLoginActivity()
+            }, 1500
         )
     }
-    private fun goToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun goToLoginActivity() {
+        val intent = Intent(this, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
