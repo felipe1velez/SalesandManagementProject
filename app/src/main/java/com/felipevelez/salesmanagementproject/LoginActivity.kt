@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.util.PatternsCompat
 import com.felipevelez.salesmanagementproject.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -34,15 +35,23 @@ class LoginActivity : AppCompatActivity() {
                 val  email = emailEditText.text.toString()
                 val password = passwordEditText.text.toString()
 
+                fun validateEmail(): Boolean {
+                    return PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
+                }
+
                 if(email.isEmpty() or password.isEmpty()){
                     Toast.makeText(applicationContext,"Verifique que no haya campos vacíos",Toast.LENGTH_SHORT).show()
                 }else{
-                    if(email ==emailReceived && password == passwordReceived){
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
+                    if (validateEmail() == false) {
+                        Toast.makeText(applicationContext, "El Correo ingresado no es válido", Toast.LENGTH_SHORT).show()
                     }else{
-                        Toast.makeText(applicationContext,"El usuario ó la contraseña son incorrectas",Toast.LENGTH_SHORT).show()
+                        if(email ==emailReceived && password == passwordReceived){
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
+                        }else{
+                            Toast.makeText(applicationContext,"El usuario ó la contraseña son incorrectas",Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
 
