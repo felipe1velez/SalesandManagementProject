@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         timer.schedule(
             timerTask {
                 goToMainActivity()
-            }, 4000
+            }, 3000
         )
     }
     private fun goToMainActivity() {

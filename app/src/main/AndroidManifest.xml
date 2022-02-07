@@ -10,21 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SalesManagementProject">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:label="SplashActivity"
-            android:theme="@style/Theme.SalesManagementProject.Splash">
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
