@@ -11,7 +11,9 @@
         android:theme="@style/Theme.SalesManagementProject">
         <activity
             android:name=".SplashActivity"
-            android:exported="true" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
