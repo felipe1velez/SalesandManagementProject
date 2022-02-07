@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
                     intent.putExtra("password",password)
                     startActivity(intent)
                 }else
-                    Toast.makeText(applicationContext,"Las contraseñas deben ser iguales",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Las Contraseñas Deben Ser Iguales",Toast.LENGTH_SHORT).show()
             }
         }
     }
