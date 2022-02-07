@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Sales&amp;ManagementProject</string>
-
+    <string name="bienvenido">Bienvenido</string>
+    
+    
+    
 
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>

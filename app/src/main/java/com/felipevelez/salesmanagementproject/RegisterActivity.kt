@@ -26,38 +26,21 @@ class RegisterActivity : AppCompatActivity() {
                     return PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
                 }
                 if (email.isEmpty() or password.isEmpty() or repPassword.isEmpty()) {
-                    Toast.makeText(
-                        applicationContext,
-                        "Por favor llene todos los campos",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(applicationContext, "Por favor llene todos los campos", Toast.LENGTH_SHORT).show()
                 } else {
-                    if (validateEmail() == false) {
-                        Toast.makeText(
-                            applicationContext,
-                            "El Correo ingresado no es válido",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    if (!validateEmail()) {
+                        Toast.makeText(applicationContext, "El Correo ingresado no es válido", Toast.LENGTH_SHORT).show()
                     } else {
                         if (password.length < 6) {
-                            Toast.makeText(
-                                applicationContext,
-                                "Las contraseñas debe tener mínimo 6 caracteres",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            Toast.makeText(applicationContext, "Las contraseñas debe tener mínimo 6 caracteres", Toast.LENGTH_SHORT).show()
                         } else {
                             if (password.equals(repPassword)) {
-                                val intent =
-                                    Intent(this@RegisterActivity, LoginActivity::class.java)
+                                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                                 intent.putExtra("email", email)
                                 intent.putExtra("password", password)
                                 startActivity(intent)
                             } else {
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Las contraseñas deben ser iguales",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                Toast.makeText(applicationContext, "Las contraseñas deben ser iguales", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }

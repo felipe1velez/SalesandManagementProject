@@ -42,12 +42,13 @@ class LoginActivity : AppCompatActivity() {
                 if(email.isEmpty() or password.isEmpty()){
                     Toast.makeText(applicationContext,"Verifique que no haya campos vacíos",Toast.LENGTH_SHORT).show()
                 }else{
-                    if (validateEmail() == false) {
+                    if (!validateEmail()) {
                         Toast.makeText(applicationContext, "El Correo ingresado no es válido", Toast.LENGTH_SHORT).show()
                     }else{
                         if(email ==emailReceived && password == passwordReceived){
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            intent.putExtra("email", email)
                             startActivity(intent)
                         }else{
                             Toast.makeText(applicationContext,"El usuario ó la contraseña son incorrectas",Toast.LENGTH_SHORT).show()
