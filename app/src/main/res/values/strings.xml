@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Sales&amp;ManagementProject</string>
+
+
+    <string name="email">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="sign_in">Iniciar Sesión</string>
+    <string name="does_not_have_account"><u>¡No Tienes Cuenta, Registrate!</u>]</string>
+
 </resources>
